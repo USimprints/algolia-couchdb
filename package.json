@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run jshint && npm run cov && ./node_modules/.bin/mocha ./test/**.js -R spec",
     "jshint": "./node_modules/.bin/jshint lib/* bin/* test/* index.js",
-    "cov": "./node_modules/.bin/jscoverage lib lib-cov"
+    "cov": "./node_modules/.bin/jscoverage lib lib-cov",
+    "record": "NOCK_RECORD=1 npm test"
   },
   "author": "Max Thayer <garbados@gmail.com>",
   "license": "ISC",
