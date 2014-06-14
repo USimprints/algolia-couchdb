@@ -5,8 +5,9 @@ var OrchestrateCouchDB = require('../lib-cov');
 var async = require('async');
 
 describe('OrchestrateCouchDB', function () {
-  var recorder = record('OrchestrateCouchDB');
-  before(recorder.before);
+  // TODO fix fixtures, currently broken due to socket error in `follow`
+  // var recorder = record('OrchestrateCouchDB');
+  // before(recorder.before);
 
   before(function () {
     // set up db connections
@@ -61,11 +62,11 @@ describe('OrchestrateCouchDB', function () {
     // wait for the watcher to report the change
     this.watcher.on('change.success', function (change) {
       if (id === change.id) {
-        self.watcher.stream.stop();
+        self.watcher.stop();
         done();
       }
     });
   });
 
-  after(recorder.after);
+  // after(recorder.after);
 });
