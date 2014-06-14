@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/orchestrate-io/orchestrate-couchdb.svg)](https://travis-ci.org/orchestrate-io/orchestrate-couchdb)
 [![Coverage Status](https://coveralls.io/repos/orchestrate-io/orchestrate-couchdb/badge.png)](https://coveralls.io/r/orchestrate-io/orchestrate-couchdb)
 
-<!-- [![NPM](https://nodei.co/npm/orchestrate-couchdb.png)](https://nodei.co/npm/orchestrate-couchdb/) -->
+[![NPM](https://nodei.co/npm/orchestrate-couchdb.png)](https://nodei.co/npm/orchestrate-couchdb/)
 
 Pipe CouchDB changes into [Orchestrate.io][], to effortlessly add a search, events, and relations API.
 
