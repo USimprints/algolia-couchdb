@@ -48,7 +48,7 @@ You can also run orchestrate-couchdb as a daemon, so it will continue watching y
     orchestrate-couchdb
     # Now listening to [database]
 
-Now the importer is running on `http://localhost:3000`.
+Now the importer is syncing changes from CouchDB to Orchestrate.io.
 
 ## Usage on Heroku
 
@@ -67,21 +67,25 @@ To deploy `orchestrate-couchdb` on Heroku, you'll need the [heroku toolbelt][]. 
 
 Now your app is running on Heroku! To prevent it from idling, scale the process to use two dynos:
 
-  heroku ps:scale worker=2
+    heroku ps:scale worker=2
 
 ## Options
 
 `orchestrate-couchdb` takes one argument, an options object. It takes the following arguments, and has the following defaults:
 
-    orchestrate: {
-      api_key: process.env.ORCHESTRATE_API_KEY
-    },
-    couchdb: {
-      url: process.env.COUCHDB_URL || 'http://localhost:5984',
-      username: process.env.COUCHDB_USERNAME,
-      password: process.env.COUCHDB_PASSWORD,
-      database: process.env.COUCHDB_DATABASE
-    }
+```javascript
+{  
+  orchestrate: {
+    api_key: process.env.ORCHESTRATE_API_KEY
+  },
+  couchdb: {
+    url: process.env.COUCHDB_URL || 'http://localhost:5984',
+    username: process.env.COUCHDB_USERNAME,
+    password: process.env.COUCHDB_PASSWORD,
+    database: process.env.COUCHDB_DATABASE
+  }
+}
+```
 
 You can set many of these options as environment variables, or you can pass them directly:
 
