@@ -4,3 +4,6 @@ node_js:
 - '0.10'
 after_success:
 - npm run coveralls
+env:
+  global:
+    secure: JokNH69LRdM+i1aspZgP7Aiq96kdxcCQF6D/+oRymgZPK5jKOZhP+4kr4SNp6gz/rcRyci9Lp0XyVrVRxR598K0ASg5TEusFRNEQIO0Xyk1fQtmS8aWn7QGJl7287eoNw4TLTcVu8NK2d+igzDcdlJIRiNZ5wXJdLIV1ZrEmAAI=
