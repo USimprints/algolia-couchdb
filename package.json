@@ -4,7 +4,9 @@
   "description": "Pipe CouchDB changes into Orchestrate.io",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run jshint && npm run cov && ./node_modules/.bin/mocha ./test/**.js -R spec",
+    "jshint": "./node_modules/.bin/jshint lib/* bin/* test/* index.js",
+    "cov": "./node_modules/.bin/jscoverage lib lib-cov"
   },
   "author": "Max Thayer <garbados@gmail.com>",
   "license": "ISC",

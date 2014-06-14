@@ -1,7 +1,7 @@
 var record = require('./record');
 var nano = require('nano');
 var orchestrate = require('orchestrate');
-var OrchestrateCouchDB = require('../lib');
+var OrchestrateCouchDB = require('../lib-cov');
 
 describe('OrchestrateCouchDB', function () {
   var recorder = record('OrchestrateCouchDB');
