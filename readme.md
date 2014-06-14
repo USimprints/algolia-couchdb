@@ -80,7 +80,8 @@ Now your app is running on Heroku! To prevent it from idling, scale the process 
       port: process.env.COUCHDB_PORT || 27017,
       host: process.env.COUCHDB_HOST || 'localhost',
       username: process.env.COUCHDB_USERNAME,
-      password: process.env.COUCHDB_PASSWORD
+      password: process.env.COUCHDB_PASSWORD,
+      database: process.env.COUCHDB_DATABASE
     }
 
 You can set many of these options as environment variables, or you can pass them directly:
@@ -103,12 +104,11 @@ var importer = new OrchestrateCouchDB({
 
 ## Events
 
-* `connect`
 * `change`: Emitted whenever processing a change starts, succeeded, and errors out.
-* `change.start`: Detected a change in MongoDB.
+* `change.start`: Detected a change in CouchDB.
 * `change.success`: Writing a document to Orchestrate.io succeeded!
 * `change.error`: Writing a document to Orchestrate.io failed due to an error.
-* `error`: The connection to MongoDB experienced an error.
+* `error`: The connection to CouchDB experienced an error.
 * `drain`: The queue has run out of changes to process.
 
 ## Tests
