@@ -14,7 +14,7 @@ Pipe CouchDB changes into [Orchestrate.io][], to effortlessly add a search, even
 ## Usage
 
 ```javascript
-var OrchestrateMongo = require('orchestrate-couchdb');
+var OrchestrateCouchDB = require('orchestrate-couchdb');
 
 var importer = new OrchestrateCouchDB({
   orchestrate: {
@@ -77,8 +77,7 @@ Now your app is running on Heroku! To prevent it from idling, scale the process 
       api_key: process.env.ORCHESTRATE_API_KEY
     },
     couchdb: {
-      port: process.env.COUCHDB_PORT || 27017,
-      host: process.env.COUCHDB_HOST || 'localhost',
+      url: process.env.COUCHDB_URL || 'http://localhost:5984',
       username: process.env.COUCHDB_USERNAME,
       password: process.env.COUCHDB_PASSWORD,
       database: process.env.COUCHDB_DATABASE
@@ -93,11 +92,11 @@ var importer = new OrchestrateCouchDB({
   orchestrate: {
     api_key: 'your_orchestrate_api_key'
   },
-  mongodb: {
-    port: 5984,
-    host: 'localhost',
+  couchdb: {
+    url: 'http://localhost:5984',
     username: 'bobross',
-    password: 'happylittletrees'
+    password: 'happylittletrees',
+    database: 'joy-of-painting'
   }
 });
 ```
