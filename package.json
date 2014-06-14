@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Pipe CouchDB changes into Orchestrate.io",
   "main": "index.js",
+  "bin": {
+    "orchestrate-couchdb": "./bin/index.js"
+  },
   "scripts": {
     "test": "npm run jshint && npm run cov && ./node_modules/.bin/mocha ./test/**.js -R spec",
     "jshint": "./node_modules/.bin/jshint lib/* bin/* test/* index.js",

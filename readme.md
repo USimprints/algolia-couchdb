@@ -103,6 +103,7 @@ var importer = new OrchestrateCouchDB({
 
 ## Events
 
+* `connect`: When the watcher begins listening, but before any changes are received.
 * `change`: Emitted whenever processing a change starts, succeeded, and errors out.
 * `change.start`: Detected a change in CouchDB.
 * `change.success`: Writing a document to Orchestrate.io succeeded!
