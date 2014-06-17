@@ -112,14 +112,21 @@ describe('OrchestrateCouchDB', function () {
         ])
       ], function (err) {
         assert(!err);
-        self.orc.get(self.collection, id)
-        .then(function (doc) {
-          done(new Error("doc should not exist."));
-        })
-        .fail(function (err) {
-          assert.equal(err.statusCode, 404);
-          done();
-        });
+        async.series([
+          function (done) {
+            setTimeout(done, 100);
+          },
+          function (done) {
+            self.orc.get(self.collection, id)
+            .then(function (doc) {
+              done(new Error("doc should not exist"));
+            })
+            .fail(function (err) {
+              assert.equal(err.statusCode, 404);
+              done();
+            });
+          }
+        ], done);
       });
     });
   });

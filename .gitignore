@@ -3,3 +3,4 @@ test/fixtures/*.js
 lib-cov
 npm-debug.log
 coverage.html
+.env
