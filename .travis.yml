@@ -9,3 +9,10 @@ after_success:
 env:
   global:
     secure: JokNH69LRdM+i1aspZgP7Aiq96kdxcCQF6D/+oRymgZPK5jKOZhP+4kr4SNp6gz/rcRyci9Lp0XyVrVRxR598K0ASg5TEusFRNEQIO0Xyk1fQtmS8aWn7QGJl7287eoNw4TLTcVu8NK2d+igzDcdlJIRiNZ5wXJdLIV1ZrEmAAI=
+deploy:
+  provider: heroku
+  api_key:
+    secure: AXt1VolPff+MpIXZUAiOe4Xgyy6Qqmj0cz6lpDGb6WwvnFYeU2SGKGx8AXnMkeCrRLmT9FtiiWOz6ZD0v0jlVFOUg50QN7tJyYDWkcxKn+15Qy8IUTaF0UpFvlqaxfkvhpYNiCFmZiUZaYBNTeltlhr/mVXr06JFlOE0vPOBDJM=
+  app: orchestrate-couchdb
+  on:
+    repo: orchestrate-io/orchestrate-couchdb
