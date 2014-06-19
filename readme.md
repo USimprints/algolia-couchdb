@@ -16,7 +16,7 @@ Pipe CouchDB changes into [Orchestrate.io][], to effortlessly add a search, even
 ```javascript
 var OrchestrateCouchDB = require('orchestrate-couchdb');
 
-var importer = new OrchestrateCouchDB({
+var importer = OrchestrateCouchDB({
   orchestrate: {
     api_key: 'your_orchestrate_api_key'
   },
@@ -64,7 +64,7 @@ To deploy `orchestrate-couchdb` on Heroku, you'll need the [heroku toolbelt][]. 
 
 Now your app is running on Heroku! To prevent it from idling, scale the process to use two dynos:
 
-    heroku ps:scale worker=2
+    heroku ps:scale worker=1 web=0
 
 ## Options
 
