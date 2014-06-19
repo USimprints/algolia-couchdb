@@ -58,6 +58,8 @@ Now the importer is syncing changes from CouchDB to Orchestrate.io.
 
 To deploy `orchestrate-couchdb` on Heroku, you'll need the [heroku toolbelt][]. Then:
 
+[heroku toolbelt]: https://toolbelt.heroku.com/
+
     git clone git@github.com:orchestrate-io/orchestrate-couchdb.git
     cd orchestrate-couchdb
     heroku create [app-name]
@@ -68,7 +70,7 @@ To deploy `orchestrate-couchdb` on Heroku, you'll need the [heroku toolbelt][]. 
     heroku config:set COUCHDB_DATABASE=...
     git push heroku master
 
-Now your app is running on Heroku! To prevent it from idling, scale the process to use two dynos:
+Now your app is running on Heroku! Since there are no worker dynos by default, let's start one:
 
     heroku ps:scale worker=1 web=0
 
