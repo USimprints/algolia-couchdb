@@ -1,6 +1,6 @@
 {
   "name": "orchestrate-couchdb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pipe CouchDB changes into Orchestrate.io",
   "main": "index.js",
   "bin": {

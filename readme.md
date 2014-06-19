@@ -25,6 +25,10 @@ var importer = OrchestrateCouchDB({
     username: 'bobross',
     password: 'happylittletrees',
     database: 'joy-of-painting'
+  },
+  map: function (doc) {
+    doc.hello = 'world';
+    return doc;
   }
 });
 
@@ -32,6 +36,8 @@ importer.on('change.success', console.log);
 ```
 
 Now whenever the importer successfully writes a document to Orchestrate, it will print a message.
+
+Need to pre-process your data? The `map` option can contain a function that modifies each document before it gets saved.
 
 ## Using as a Daemon
 
